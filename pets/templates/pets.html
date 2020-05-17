@@ -6,11 +6,11 @@
 <ul>
     {% for pet in pets %}
       <li>
-        <a href="/pet/{{ pet.id }}">{{ pet.pet_name }}</a>
+        <a href="/one_pet/{{ pet.id }}">{{ pet.pet_name }}</a>
       </li>
     {% endfor %}
   </ul>
  {% else %}
-Please log in 
+Please log in
  {% endif %}
 {% endblock %}

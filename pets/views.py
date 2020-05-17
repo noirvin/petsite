@@ -22,7 +22,7 @@ def one_pet(request, pet_id):
     'pet': Pet.objects.get(id=pet_id),
     'appointments' : Appointment.objects.filter(pet=pet_id).order_by('date_of_appointment')
     }
-    return render(request, 'pet.html', context)
+    return render(request, 'one_pet.html', context)
 
 def calendar(request):
   context = {
@@ -50,7 +50,7 @@ def appointment_create(request):
         form = AppointmentForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/calender')
+            return redirect('/calendar')
     else:
         form = AppointmentForm()
     return render(request,
