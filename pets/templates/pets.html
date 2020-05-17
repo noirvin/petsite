@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+    <h1>Pets</h1>
+<ul>
+    {% for pet in pets %}
+      <li>
+        <a href="/pet/{{ pet.id }}">{{ pet.pet_name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+ {% else %}
+Please log in 
+ {% endif %}
+{% endblock %}

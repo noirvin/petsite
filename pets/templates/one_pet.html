@@ -1,0 +1,24 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+  <h3>{{pet.pet_name}}</h3>
+  <ul>
+      <p>Species: {{pet.species}}</p>
+      <p>Breed: {{pet.breed}}</p>
+      <p>Weight: {{pet.weight_in_pounds}} lbs</p>
+      <p>Owner: {{pet.Owner}}</p>
+  </ul>
+  <h3>Appointment Times: </h3>
+  {% for appointment in appointments %}
+      <ul>
+          <p>{{appointment.date_of_appointment}}</p>
+      </ul>
+  {% endfor %}
+
+
+{% else %}
+Please log in to view the rest of the pet site.
+{% endif %}
+{% endblock %}

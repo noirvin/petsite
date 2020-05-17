@@ -3,7 +3,7 @@
 {% block content %}
 {% if request.user.is_authenticated %}
 <a href="{% url 'pets' %}"><h2>List of Pets</h2></a>
-<a href="{% url 'calender' %}"><h2>Calender</h2></a>
+<a href="{% url 'calendar' %}"><h2>Calendar</h2></a>
 
  {% else %}
 Login to see more

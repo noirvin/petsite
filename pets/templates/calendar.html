@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+<h1>Appointments</h1>
+<ul>
+    {% for appointment in appointments %}
+      <li>
+        <h3>{{appointment}}</h3>
+        <p>Date: {{appointment.date_of_appointment}}</p>
+        <p>Duration: {{appointment.duration_minutes}} minutes</p>
+        <p>Instructions: {{appointment.special_instructions}}</p>
+      </li>
+    {% endfor %}
+  </ul>
+ {% else %}
+Please log in to view the rest of the pet site.
+ {% endif %}
+{% endblock %}
